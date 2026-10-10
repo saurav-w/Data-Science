@@ -1,0 +1,79 @@
+PYTHON NOTES CHAPTER 3: CONDITIONAL STATEMENTS
+
+1.  WHAT IS A CONDITIONAL STATEMENT? A conditional statement allows a
+    program to make decisions based on whether a condition is True or
+    False.
+
+Real-Life Example: If age >= 18: You can vote. Else: You cannot vote.
+
+WHY DO WE USE CONDITIONAL STATEMENTS? - Make decisions - Compare
+values - Validate input - Control program flow
+
+TYPES OF CONDITIONAL STATEMENTS 1. if 2. if…else 3. if…elif…else 4.
+Nested if
+
+COMPARISON OPERATORS == Equal to != Not equal to > Greater than < Less
+than >= Greater than or equal to <= Less than or equal to
+
+1.  IF STATEMENT Syntax: if condition: statement
+
+Example: age = 20 if age >= 18: print(“Eligible to vote”)
+
+2.  IF…ELSE STATEMENT Syntax: if condition: statements else: statements
+
+Example: age = 16 if age >= 18: print(“Eligible”) else: print(“Not
+Eligible”)
+
+Example: num = 7 if num % 2 == 0: print(“Even”) else: print(“Odd”)
+
+3.  IF…ELIF…ELSE Used when checking multiple conditions.
+
+Syntax: if condition1: statements elif condition2: statements else:
+statements
+
+Example: marks = 78 if marks >= 80: print(“Distinction”) elif marks >=
+60: print(“First Division”) elif marks >= 40: print(“Pass”) else:
+print(“Fail”)
+
+4.  NESTED IF An if statement inside another if statement.
+
+Example: age = 20 citizen = True
+
+if age >= 18: if citizen: print(“Eligible”) else: print(“Not a citizen”)
+else: print(“Under age”)
+
+LOGICAL OPERATORS and : Both conditions must be True. or : At least one
+condition must be True. not : Reverses the result.
+
+Examples: if age >= 18 and citizen: print(“Eligible”)
+
+if marks >= 40 or sports: print(“Selected”)
+
+if not logged_in: print(“Please Login”)
+
+USING USER INPUT age = int(input(“Enter age:”)) if age >= 18:
+print(“Eligible”) else: print(“Not Eligible”)
+
+INDENTATION Python uses indentation (usually 4 spaces) instead of curly
+braces {}.
+
+COMMON MISTAKES 1. Using = instead of == Wrong: if age = 18: Correct: if
+age == 18:
+
+2.  Forgetting : Wrong: if age > 18 Correct: if age > 18:
+
+3.  Wrong indentation.
+
+REAL-LIFE PROGRAMS 1. Even or Odd 2. Largest of Two Numbers 3. Positive,
+Negative or Zero 4. Voting Eligibility
+
+QUICK REVISION if -> Executes when condition is True. if…else -> Chooses
+between two blocks. if…elif…else -> Checks multiple conditions. Nested
+if -> One if inside another. == compares values. = assigns values. Use
+indentation correctly.
+
+PRACTICE QUESTIONS 1. What is a conditional statement? 2. Explain if
+with example. 3. Difference between if and if…else. 4. Explain
+if…elif…else. 5. What is nested if? 6. Explain logical operators. 7. Why
+is indentation important? 8. Write programs for even/odd, largest
+number, voting eligibility, and positive/negative/zero.

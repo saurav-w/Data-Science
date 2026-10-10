@@ -1,0 +1,389 @@
+PYTHON NOTES
+CHAPTER 5: LISTS AND TUPLES IN PYTHON PROGRAMMING
+
+1. INTRODUCTION
+Lists and tuples are sequence data types used to store multiple items in one variable.
+- List: changeable collection
+- Tuple: unchangeable collection
+
+Both can store:
+- numbers
+- strings
+- booleans
+- mixed data types
+
+2. WHAT IS A LIST?
+A list is an ordered and changeable collection of items.
+
+Syntax:
+my_list = [item1, item2, item3]
+
+Example:
+fruits = ["apple", "banana", "mango"]
+print(fruits)
+
+Output:
+['apple', 'banana', 'mango']
+
+FEATURES OF LISTS
+- Ordered
+- Changeable (mutable)
+- Allows duplicates
+- Can store different data types
+
+Example:
+data = [10, "Python", 3.5, True]
+print(data)
+
+Output:
+[10, 'Python', 3.5, True]
+
+3. WHAT IS A TUPLE?
+A tuple is an ordered collection of items that cannot be changed after creation.
+
+Syntax:
+my_tuple = (item1, item2, item3)
+
+Example:
+coordinates = (10, 20)
+print(coordinates)
+
+Output:
+(10, 20)
+
+FEATURES OF TUPLES
+- Ordered
+- Unchangeable (immutable)
+- Allows duplicates
+- Can store different data types
+
+Example:
+info = (1, "Python", 5.5, True)
+print(info)
+
+Output:
+(1, 'Python', 5.5, True)
+
+4. DIFFERENCE BETWEEN LIST AND TUPLE
+
+List:
+- Uses [ ]
+- Changeable
+- Slightly slower
+- Use when data may change
+
+Tuple:
+- Uses ( )
+- Unchangeable
+- Faster
+- Use when data should stay fixed
+
+Example:
+my_list = [1, 2, 3]
+my_tuple = (1, 2, 3)
+
+5. CREATING LISTS AND TUPLES
+
+List:
+numbers = [1, 2, 3, 4, 5]
+print(numbers)
+
+Tuple:
+numbers = (1, 2, 3, 4, 5)
+print(numbers)
+
+6. ACCESSING ELEMENTS
+Lists and tuples use indexing.
+Indexing starts from 0.
+
+Example:
+fruits = ["apple", "banana", "mango"]
+print(fruits[0])
+print(fruits[1])
+
+Output:
+apple
+banana
+
+Tuple Example:
+colors = ("red", "green", "blue")
+print(colors[2])
+
+Output:
+blue
+
+7. NEGATIVE INDEXING
+Negative indexing starts from the end.
+
+Example:
+numbers = [10, 20, 30, 40]
+print(numbers[-1])
+print(numbers[-2])
+
+Output:
+40
+30
+
+8. SLICING
+Slicing means taking part of a list or tuple.
+
+Syntax:
+sequence[start:end:step]
+
+List slicing:
+nums = [1, 2, 3, 4, 5, 6]
+print(nums[1:4])
+
+Output:
+[2, 3, 4]
+
+Tuple slicing:
+nums = (10, 20, 30, 40, 50)
+print(nums[1:4])
+
+Output:
+(20, 30, 40)
+
+9. CHANGING VALUES IN A LIST
+Lists are mutable, so values can be changed.
+
+Example:
+marks = [70, 80, 90]
+marks[1] = 85
+print(marks)
+
+Output:
+[70, 85, 90]
+
+10. WHY TUPLES CANNOT BE CHANGED
+Tuples are immutable. If you try to change an item, Python gives an error.
+
+Example:
+numbers = (1, 2, 3)
+numbers[0] = 10
+
+Error:
+TypeError: 'tuple' object does not support item assignment
+
+11. LIST METHODS
+
+append()
+Adds an item to the end.
+
+Example:
+fruits = ["apple", "banana"]
+fruits.append("mango")
+print(fruits)
+
+Output:
+['apple', 'banana', 'mango']
+
+insert()
+Adds an item at a specific position.
+
+Example:
+fruits = ["apple", "banana"]
+fruits.insert(1, "mango")
+print(fruits)
+
+Output:
+['apple', 'mango', 'banana']
+
+remove()
+Removes the first matching item.
+
+Example:
+fruits = ["apple", "banana", "mango"]
+fruits.remove("banana")
+print(fruits)
+
+Output:
+['apple', 'mango']
+
+pop()
+Removes and returns an item.
+
+Example:
+fruits = ["apple", "banana", "mango"]
+fruits.pop()
+print(fruits)
+
+Output:
+['apple', 'banana']
+
+sort()
+Sorts the list in ascending order.
+
+Example:
+nums = [3, 1, 4, 2]
+nums.sort()
+print(nums)
+
+Output:
+[1, 2, 3, 4]
+
+reverse()
+Reverses the list.
+
+Example:
+nums = [1, 2, 3, 4]
+nums.reverse()
+print(nums)
+
+Output:
+[4, 3, 2, 1]
+
+12. TUPLE METHODS
+
+count()
+Counts how many times a value appears.
+
+Example:
+numbers = (1, 2, 2, 3, 2)
+print(numbers.count(2))
+
+Output:
+3
+
+index()
+Finds the position of a value.
+
+Example:
+numbers = (10, 20, 30)
+print(numbers.index(20))
+
+Output:
+1
+
+13. LENGTH OF LIST AND TUPLE
+Use len() to find the number of items.
+
+Example:
+fruits = ["apple", "banana", "mango"]
+print(len(fruits))
+
+Output:
+3
+
+Tuple Example:
+nums = (10, 20, 30, 40)
+print(len(nums))
+
+Output:
+4
+
+14. LOOPING THROUGH LISTS AND TUPLES
+
+List:
+fruits = ["apple", "banana", "mango"]
+for fruit in fruits:
+    print(fruit)
+
+Output:
+apple
+banana
+mango
+
+Tuple:
+colors = ("red", "green", "blue")
+for color in colors:
+    print(color)
+
+Output:
+red
+green
+blue
+
+15. NESTED LISTS AND TUPLES
+
+Nested List:
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6]
+]
+print(matrix[0][1])
+
+Output:
+2
+
+Nested Tuple:
+data = (
+    (1, 2),
+    (3, 4)
+)
+print(data[1][0])
+
+Output:
+3
+
+16. WHEN TO USE LIST AND TUPLE
+
+Use a List when:
+- data may change
+- you need to add or remove items
+- you want a flexible collection
+
+Use a Tuple when:
+- data should remain fixed
+- you want better performance
+- you do not want items to change
+
+17. CONVERSION BETWEEN LIST AND TUPLE
+
+List to Tuple:
+my_list = [1, 2, 3]
+my_tuple = tuple(my_list)
+print(my_tuple)
+
+Output:
+(1, 2, 3)
+
+Tuple to List:
+my_tuple = (4, 5, 6)
+my_list = list(my_tuple)
+print(my_list)
+
+Output:
+[4, 5, 6]
+
+18. COMMON BEGINNER MISTAKES
+
+Mistake 1: Using parentheses for a list
+fruits = ("apple", "banana")
+This is a tuple, not a list.
+
+Mistake 2: Trying to change a tuple
+numbers = (1, 2, 3)
+numbers[0] = 10
+This gives an error.
+
+Mistake 3: Forgetting indexing starts from 0
+fruits = ["apple", "banana", "mango"]
+print(fruits[1])
+This prints banana, not apple.
+
+19. QUICK REVISION
+- List: changeable collection
+- Tuple: unchangeable collection
+- List uses [ ]
+- Tuple uses ( )
+- Both are ordered
+- Both allow duplicates
+- Lists have many methods
+- Tuples have only a few methods
+- Use list for changing data
+- Use tuple for fixed data
+
+20. PRACTICE QUESTIONS
+1. What is a list in Python?
+2. What is a tuple in Python?
+3. Differentiate between list and tuple.
+4. How do you create a list and a tuple?
+5. How do you access elements in a list or tuple?
+6. What is slicing?
+7. Why are tuples called immutable?
+8. Explain list methods with examples.
+9. Explain tuple methods with examples.
+10. Write a program to store 5 numbers in a list and print the largest one.
+11. Write a program to create a tuple of your name, age, and city.
+12. Write a program to convert a list into a tuple and a tuple into a list.
