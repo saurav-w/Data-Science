@@ -1,0 +1,137 @@
+PYTHON NOTES CHAPTER 4: LOOPS IN PYTHON PROGRAMMING
+
+WHAT IS A LOOP? A loop repeatedly executes a block of code until a
+condition becomes False or all items in a sequence have been processed.
+
+WHY USE LOOPS? - Reduce code repetition - Save time - Process large
+amounts of data - Traverse strings, lists, tuples and files - Build
+efficient programs
+
+WITHOUT LOOP print(“Hello”) print(“Hello”) print(“Hello”) print(“Hello”)
+print(“Hello”)
+
+USING FOR LOOP for i in range(5): print(“Hello”)
+
+TYPES OF LOOPS 1. for loop 2. while loop
+
+  ----------------------------------------
+  FOR LOOP
+  ----------------------------------------
+  Syntax: for variable in sequence:
+  statements
+
+  Flow: Start -> Get Value -> Execute
+  Statements -> More Values? Yes -> Repeat
+  No -> End
+
+  THE range() FUNCTION
+
+  range(stop) Example: for i in range(5):
+  print(i) Output: 0 1 2 3 4
+
+  range(start, stop) Example: for i in
+  range(2,6): print(i) Output: 2 3 4 5
+
+  range(start, stop, step) Example: for i
+  in range(1,11,2): print(i) Output: 1 3 5
+  7 9
+
+  Print 1 to 10 for i in range(1,11):
+  print(i)
+
+  Reverse Counting for i in
+  range(10,0,-1): print(i)
+
+  Loop Through String name=“Python” for
+  letter in name: print(letter)
+
+  Loop Through List
+  fruits=[“Apple”,“Banana”,“Mango”] for
+  fruit in fruits: print(fruit)
+  ----------------------------------------
+
+WHILE LOOP
+
+Syntax: while condition: statements
+
+Example: i=1 while i<=5: print(i) i+=1
+
+Infinite Loop: while True: print(“Hello”)
+
+Difference: for -> Known number of iterations. while -> Unknown number
+of iterations.
+
+  ----------------------------------------
+  NESTED LOOPS
+  ----------------------------------------
+  for i in range(3): for j in range(2):
+  print(i,j)
+
+  Output: 0 0 0 1 1 0 1 1 2 0 2 1
+  ----------------------------------------
+
+PATTERN PRINTING
+
+Print Stars: for i in range(5): print(“*“)
+
+Square: for i in range(5): print(“*”*5)
+
+Triangle: for i in range(1,6): print(““i)
+
+  ----------------------------------------
+  LOOP CONTROL STATEMENTS
+  ----------------------------------------
+  break Stops loop immediately.
+
+  continue Skips current iteration.
+
+  pass Placeholder statement.
+
+  Examples: for i in range(10): if i==5:
+  break
+
+  for i in range(6): if i==3: continue
+  print(i)
+
+  for i in range(5): if i==2: pass
+  print(i)
+  ----------------------------------------
+
+REAL LIFE PROGRAMS
+
+Sum of First 10 Numbers total=0 for i in range(1,11): total+=i
+print(total)
+
+Multiplication Table num=int(input(“Enter number:”)) for i in
+range(1,11): print(num,“x”,i,“=”,num*i)
+
+Factorial num=5 fact=1 for i in range(1,num+1): fact*=i print(fact)
+
+Count Digits num=12345 count=0 while num>0: count+=1 num//=10
+print(count)
+
+  ----------------------------------------
+  COMMON MISTAKES
+  ----------------------------------------
+  1. Wrong indentation. 2. Infinite while
+  loop by forgetting i+=1. 3. range(5)
+  prints 0 to 4, not 1 to 5.
+
+  ----------------------------------------
+
+SUMMARY
+
+for : Iterate over sequence while : Repeat while condition is True break
+: Exit loop continue : Skip current iteration pass : Placeholder
+
+Quick Revision: - Loop repeats code. - Python has for and while loops. -
+range(stop) starts at 0. - range(start,stop) starts from start. -
+range(start,stop,step) changes increment/decrement. - Use for for
+sequences. - Use while for conditions. - break exits loop. - continue
+skips iteration. - pass does nothing.
+
+PRACTICE QUESTIONS 1. What is a loop? 2. Explain for loop. 3. Explain
+while loop. 4. Difference between for and while. 5. Explain range(). 6.
+What are nested loops? 7. Explain break, continue and pass. 8. Write
+programs: - Print 1 to 10 - Print even numbers - Multiplication table -
+Sum of first 10 numbers - Factorial - Count digits - Triangle pattern

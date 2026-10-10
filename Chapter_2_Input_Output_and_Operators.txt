@@ -1,0 +1,26 @@
+PYTHON NOTES CHAPTER 2: INPUT, OUTPUT AND OPERATORS
+
+1.  INPUT Input means data entered by the user. Syntax: variable =
+    input(“Enter value:”) Example: name=input(“Enter name:”) print(name)
+    input() returns a string by default. Use int(input()) for integers
+    and float(input()) for decimals.
+
+2.  OUTPUT Use print() to display output. Examples: print(‘Hello’)
+    print(100)
+
+3.  TYPE CONVERSION int(‘25’)->25 float(‘3.5’)->3.5 str(100)->‘100’
+    bool(1)->True
+
+4.  OPERATORS Arithmetic: + - * / % // ** Assignment: = += -= *= /= %=
+    //= **= Comparison: == != > < >= <= Logical: and or not Membership:
+    in not in Identity: is is not Bitwise: & | ^ ~ << >>
+
+5.  OPERATOR PRECEDENCE () ** *,/,//,% +,- Comparison not and or
+
+6.  PRACTICE
+
+-   What is input()?
+-   Explain print().
+-   List arithmetic operators.
+-   Difference between = and ==.
+-   Explain logical operators.

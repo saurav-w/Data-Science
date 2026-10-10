@@ -1,0 +1,73 @@
+PYTHON NOTES CHAPTER 1: VARIABLES AND DATA TYPES
+
+1.  WHAT IS A VARIABLE? A variable is a named memory location used to
+    store data. Example: name = “Saurav” age = 21
+
+2.  RULES FOR VARIABLE NAMES
+
+-   Start with a letter or underscore (_)
+-   Cannot start with a number
+-   Can contain letters, numbers, and underscores
+-   Cannot contain spaces
+-   Cannot use Python keywords
+-   Variable names are case-sensitive
+
+Valid: name student_age marks1 _total
+
+Invalid: 2name student age class total-price
+
+3.  CHANGING VARIABLES x = 10 print(x) x = 25 print(x)
+
+4.  MULTIPLE ASSIGNMENT a, b, c = 10, 20, 30
+
+5.  DATA TYPES
+
+int Whole numbers Example: age = 20
+
+float Decimal numbers Example: price = 99.5
+
+str Text inside quotes Example: name = “Python”
+
+bool True or False Example: is_student = True
+
+list Ordered, mutable collection Example: fruits =
+[“Apple”,“Banana”,“Mango”]
+
+tuple Ordered, immutable collection Example: coordinates = (10,20)
+
+dict Key-value pairs Example: student = {“name”:“Saurav”,“age”:21}
+
+set Unique values Example: numbers = {1,2,2,3} Output: {1,2,3}
+
+NoneType Represents no value Example: x = None
+
+6.  CHECKING DATA TYPE Use type()
+
+print(type(10)) <class ‘int’>
+
+7.  TYPE CONVERSION
+
+int(“25”) -> 25 float(“3.5”) -> 3.5 str(100) -> “100” bool(1) -> True
+
+8.  DYNAMIC TYPING x = 10 print(type(x)) x = “Hello” print(type(x))
+
+9.  QUICK REVISION Variable : Stores data int : Whole numbers float :
+    Decimal numbers str : Text bool : True/False list : Ordered
+    collection tuple : Immutable collection dict : Key-value pairs set :
+    Unique values None : No value type() : Checks data type
+
+10. PRACTICE QUESTIONS
+
+11. What is a variable?
+
+12. State the rules for naming variables.
+
+13. Explain int and float.
+
+14. Differentiate list and tuple.
+
+15. What does type() do?
+
+16. Explain dynamic typing.
+
+17. What is type conversion?
