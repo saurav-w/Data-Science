@@ -1,0 +1,141 @@
+PYTHON NOTES CHAPTER 6: DICTIONARIES IN PYTHON PROGRAMMING
+
+1.  WHAT IS A DICTIONARY?
+
+A dictionary is a collection of data stored in the form of key-value
+pairs.
+
+Key: The identifier used to access data.
+
+Value: The actual information stored.
+
+Syntax: dictionary_name = {key:value}
+
+Example: student = { “name”:“Saurav”, “age”:21, “faculty”:“BSc CSIT” }
+
+2.  FEATURES OF DICTIONARY
+
+-   Stores data in key-value pairs.
+-   Ordered collection.
+-   Mutable (changeable).
+-   Keys must be unique.
+-   Values can be duplicated.
+-   Keys must be immutable.
+
+3.  CREATING DICTIONARY
+
+Empty dictionary: student = {}
+
+With values: student = {“name”:“Saurav”,“age”:21}
+
+Using dict(): student = dict(name=“Saurav”, age=21)
+
+4.  ACCESSING ELEMENTS
+
+Using key: student[“name”]
+
+Using get(): student.get(“age”)
+
+[] gives KeyError if key does not exist. get() returns None if key does
+not exist.
+
+5.  ADDING ITEMS
+
+Example: student[“grade”]=“A”
+
+6.  UPDATING VALUES
+
+Example: student[“age”]=22
+
+7.  REMOVING ITEMS
+
+pop() - removes item using key. popitem() - removes last inserted item.
+del - deletes item. clear() - removes all items.
+
+8.  DICTIONARY METHODS
+
+keys() - returns all keys. values() - returns all values. items() -
+returns key-value pairs. update() - updates dictionary. copy() - creates
+a copy.
+
+9.  LOOPING THROUGH DICTIONARY
+
+Keys: for x in student: print(x)
+
+Values: for x in student.values(): print(x)
+
+Key-value pairs: for key,value in student.items(): print(key,value)
+
+10. NESTED DICTIONARY
+
+A dictionary inside another dictionary.
+
+Example: students={ “student1”:{“name”:“Saurav”,“age”:21} }
+
+11. DICTIONARY WITH LISTS
+
+Example: student={ “name”:“Saurav”, “marks”:[80,90,85] }
+
+12. CHECKING KEY EXISTS
+
+Use in operator.
+
+Example: if “name” in student: print(“Key exists”)
+
+13. LENGTH OF DICTIONARY
+
+Use len().
+
+Example: len(student)
+
+14. REAL LIFE EXAMPLES
+
+Student: student={“name”:“Saurav”,“roll”:15,“marks”:85}
+
+Product: product={“name”:“Laptop”,“price”:70000}
+
+User: user={“username”:“saurav123”,“active”:True}
+
+15. COMMON MISTAKES
+
+-   Duplicate keys overwrite previous values.
+-   Accessing missing keys using [] gives error.
+-   Keys cannot be mutable objects like lists.
+
+16. DICTIONARY VS LIST
+
+Dictionary: - Key-value pairs - Uses {} - Access using keys
+
+List: - Ordered values - Uses [] - Access using index
+
+17. QUICK REVISION
+
+-   Dictionary stores key-value pairs.
+-   Keys are unique.
+-   Values can repeat.
+-   Dictionaries are mutable.
+-   get() safely accesses values.
+-   keys(), values(), items() are important methods.
+-   Nested dictionaries store complex information.
+
+18. PRACTICE QUESTIONS
+
+19. What is a dictionary in Python?
+
+20. Explain key-value pairs.
+
+21. List features of dictionaries.
+
+22. How do you create an empty dictionary?
+
+23. Differentiate list and dictionary.
+
+24. Explain keys(), values(), items(), update(), and pop().
+
+25. What is a nested dictionary?
+
+26. Write a program to store student details using dictionary.
+
+27. Write a program to count dictionary items.
+
+28. Check whether a key exists in a dictionary.

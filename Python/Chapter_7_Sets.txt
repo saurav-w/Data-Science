@@ -1,0 +1,591 @@
+PYTHON NOTES CHAPTER 7: SETS IN PYTHON PROGRAMMING
+
+1.  WHAT IS A SET?
+
+A set is an unordered collection of unique elements.
+
+Sets are used to store multiple values in one variable and automatically
+remove duplicate values.
+
+Sets are useful for: - Removing duplicate values - Performing
+mathematical operations like union and intersection - Checking
+membership quickly - Comparing collections of data
+
+Syntax:
+
+set_name = {value1, value2, value3}
+
+Example:
+
+numbers = {1, 2, 3, 4}
+
+print(numbers)
+
+Output:
+
+{1, 2, 3, 4}
+
+Example with duplicate values:
+
+numbers = {1, 2, 2, 3, 4, 4}
+
+print(numbers)
+
+Output:
+
+{1, 2, 3, 4}
+
+Explanation:
+
+The duplicate values 2 and 4 are automatically removed.
+
+------------------------------------------------------------------------
+
+2.  FEATURES OF SETS
+
+3.  UNORDERED COLLECTION
+
+Sets do not maintain the position or order of elements.
+
+Example:
+
+colors = {“red”, “green”, “blue”}
+
+print(colors)
+
+Output order may be different:
+
+{‘green’, ‘red’, ‘blue’}
+
+Because sets do not use indexing.
+
+2.  NO DUPLICATE VALUES
+
+Sets store only unique elements.
+
+Example:
+
+data = {10, 20, 20, 30}
+
+print(data)
+
+Output:
+
+{10, 20, 30}
+
+3.  MUTABLE (CHANGEABLE)
+
+Sets can be modified after creation.
+
+You can: - Add elements - Remove elements - Update elements
+
+Example:
+
+numbers = {1, 2, 3}
+
+numbers.add(4)
+
+print(numbers)
+
+Output:
+
+{1, 2, 3, 4}
+
+4.  NO INDEXING
+
+Sets do not support indexing.
+
+Wrong:
+
+numbers = {10, 20, 30}
+
+print(numbers[0])
+
+Output:
+
+TypeError
+
+Because sets are unordered.
+
+5.  ELEMENTS MUST BE IMMUTABLE
+
+Set elements must be immutable data types.
+
+Allowed:
+
+numbers = {1, 2, 3}
+
+Not allowed:
+
+data = {[1,2], [3,4]}
+
+Because lists can change.
+
+------------------------------------------------------------------------
+
+3.  CREATING SETS
+
+CREATING AN EMPTY SET
+
+Important:
+
+x = {}
+
+This creates an empty dictionary, not a set.
+
+Correct way:
+
+x = set()
+
+print(x)
+
+Output:
+
+set()
+
+CREATING A SET WITH VALUES
+
+Example:
+
+fruits = {“Apple”, “Banana”, “Mango”}
+
+print(fruits)
+
+------------------------------------------------------------------------
+
+4.  CHECKING DATA TYPE OF SET
+
+Use type() function.
+
+Example:
+
+numbers = {1,2,3}
+
+print(type(numbers))
+
+Output:
+
+<class ‘set’>
+
+------------------------------------------------------------------------
+
+5.  ADDING ELEMENTS TO A SET
+
+add()
+
+The add() method adds a single element.
+
+Example:
+
+numbers = {1,2,3}
+
+numbers.add(4)
+
+print(numbers)
+
+Output:
+
+{1,2,3,4}
+
+------------------------------------------------------------------------
+
+6.  ADDING MULTIPLE ELEMENTS
+
+update()
+
+The update() method adds multiple elements.
+
+Example:
+
+numbers = {1,2,3}
+
+numbers.update([4,5,6])
+
+print(numbers)
+
+Output:
+
+{1,2,3,4,5,6}
+
+------------------------------------------------------------------------
+
+7.  REMOVING ELEMENTS FROM SET
+
+remove()
+
+Removes a specified element.
+
+Example:
+
+numbers = {1,2,3,4}
+
+numbers.remove(3)
+
+print(numbers)
+
+Output:
+
+{1,2,4}
+
+If the element does not exist, Python gives KeyError.
+
+discard()
+
+Removes an element without giving an error.
+
+Example:
+
+numbers = {1,2,3}
+
+numbers.discard(10)
+
+print(numbers)
+
+Output:
+
+{1,2,3}
+
+pop()
+
+Removes a random element from the set.
+
+clear()
+
+Removes all elements.
+
+Example:
+
+numbers = {1,2,3}
+
+numbers.clear()
+
+print(numbers)
+
+Output:
+
+set()
+
+------------------------------------------------------------------------
+
+8.  SET OPERATIONS
+
+Sets support mathematical operations:
+
+1.  Union
+
+2.  Intersection
+
+3.  Difference
+
+4.  Symmetric Difference
+
+5.  UNION OF SETS
+
+Union combines all elements from two sets.
+
+Symbol:
+
+Method:
+
+union()
+
+Example:
+
+A = {1,2,3} B = {3,4,5}
+
+print(A | B)
+
+Output:
+
+{1,2,3,4,5}
+
+2.  INTERSECTION OF SETS
+
+Intersection returns common elements.
+
+Symbol:
+
+&
+
+Example:
+
+A = {1,2,3} B = {3,4,5}
+
+print(A & B)
+
+Output:
+
+{3}
+
+3.  DIFFERENCE OF SETS
+
+Returns elements present in first set but not second.
+
+Symbol:
+
+-   
+
+Example:
+
+A = {1,2,3} B = {2,3,4}
+
+print(A - B)
+
+Output:
+
+{1}
+
+4.  SYMMETRIC DIFFERENCE
+
+Returns elements present in either set but not both.
+
+Symbol:
+
+^
+
+Example:
+
+A = {1,2,3} B = {3,4,5}
+
+print(A ^ B)
+
+Output:
+
+{1,2,4,5}
+
+------------------------------------------------------------------------
+
+9.  SET METHODS
+
+add()
+
+Adds one element.
+
+update()
+
+Adds multiple elements.
+
+remove()
+
+Removes an element.
+
+discard()
+
+Removes safely without error.
+
+pop()
+
+Removes random element.
+
+clear()
+
+Deletes all elements.
+
+copy()
+
+Creates a copy of a set.
+
+Example:
+
+A = {1,2,3}
+
+B = A.copy()
+
+print(B)
+
+Output:
+
+{1,2,3}
+
+------------------------------------------------------------------------
+
+10. CHECKING MEMBERSHIP IN SET
+
+Use:
+
+-   in
+-   not in
+
+Example:
+
+fruits = {“Apple”,“Banana”,“Mango”}
+
+print(“Apple” in fruits)
+
+Output:
+
+True
+
+------------------------------------------------------------------------
+
+11. LOOPING THROUGH SETS
+
+Example:
+
+fruits = {“Apple”,“Banana”,“Mango”}
+
+for fruit in fruits: print(fruit)
+
+Note: The output order may change because sets are unordered.
+
+------------------------------------------------------------------------
+
+12. SET WITH DIFFERENT DATA TYPES
+
+A set can contain different immutable data types.
+
+Example:
+
+data = {10, “Python”, 3.5, True}
+
+print(data)
+
+------------------------------------------------------------------------
+
+13. FROZEN SET
+
+A frozenset is an immutable version of a set.
+
+It cannot be changed after creation.
+
+Syntax:
+
+x = frozenset([1,2,3])
+
+Example:
+
+numbers = frozenset([1,2,3])
+
+print(numbers)
+
+Output:
+
+frozenset({1,2,3})
+
+------------------------------------------------------------------------
+
+14. DIFFERENCE BETWEEN LIST, TUPLE, AND SET
+
+List: - Uses [] - Ordered - Mutable - Allows duplicates - Supports
+indexing
+
+Tuple: - Uses () - Ordered - Immutable - Allows duplicates - Supports
+indexing
+
+Set: - Uses {} - Unordered - Mutable - Does not allow duplicates - Does
+not support indexing
+
+------------------------------------------------------------------------
+
+15. REAL LIFE EXAMPLES OF SETS
+
+16. Removing Duplicate Data
+
+numbers = [1,2,2,3,4,4]
+
+unique = set(numbers)
+
+print(unique)
+
+Output:
+
+{1,2,3,4}
+
+2.  Finding Common Subjects
+
+student1 = {“Math”,“Science”,“English”}
+
+student2 = {“Science”,“Computer”}
+
+print(student1 & student2)
+
+Output:
+
+{‘Science’}
+
+3.  Checking Membership
+
+allowed_users = {“Ram”,“Sita”,“Hari”}
+
+if “Ram” in allowed_users: print(“Access Granted”)
+
+Output:
+
+Access Granted
+
+------------------------------------------------------------------------
+
+16. COMMON BEGINNER MISTAKES
+
+Mistake 1:
+
+Creating empty set incorrectly.
+
+Wrong:
+
+x = {}
+
+Correct:
+
+x = set()
+
+Mistake 2:
+
+Trying to access set using index.
+
+Wrong:
+
+numbers[0]
+
+Sets do not support indexing.
+
+Mistake 3:
+
+Adding mutable items.
+
+Wrong:
+
+data = {[1,2], [3,4]}
+
+Lists cannot be stored inside sets.
+
+------------------------------------------------------------------------
+
+17. QUICK REVISION
+
+-   Set stores unique values.
+-   Sets are unordered.
+-   Sets do not support indexing.
+-   Sets are mutable.
+-   Duplicate values are automatically removed.
+-   Empty set is created using set().
+-   add() adds elements.
+-   remove() deletes elements.
+-   union() combines sets.
+-   intersection() finds common values.
+-   difference() finds unique values.
+-   symmetric_difference() finds uncommon values.
+
+------------------------------------------------------------------------
+
+18. PRACTICE QUESTIONS
+
+19. What is a set in Python?
+
+20. Explain the features of sets.
+
+21. How is a set different from a list?
+
+22. How do you create an empty set?
+
+23. Explain add() and update() methods.
+
+24. Explain remove() and discard() methods.
+
+25. Explain union and intersection with examples.
+
+26. What is a frozenset?
+
+27. Write a program to remove duplicates from a list using a set.
+
+28. Write a program to find common elements between two sets.

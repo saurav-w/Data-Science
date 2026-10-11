@@ -1,0 +1,276 @@
+PYTHON NOTES CHAPTER 8: STRINGS IN PYTHON PROGRAMMING
+
+1.  WHAT IS A STRING?
+
+A string is a sequence of characters enclosed inside quotation marks.
+
+Characters can include: - Letters - Numbers - Symbols - Spaces - Special
+characters
+
+Strings are used to store and process textual information.
+
+Strings are widely used in: - Web development - Data Science -
+Artificial Intelligence - Natural Language Processing (NLP) - File
+handling - Database operations - User input processing
+
+Syntax: variable_name = “text”
+
+Example: name = “Saurav” print(name)
+
+Output: Saurav
+
+2.  CREATING STRINGS IN PYTHON
+
+Python allows strings using: 1. Single quotes ’ ’ 2. Double quotes ” ”
+3. Triple quotes
+
+Single quote: name = ‘Python’
+
+Double quote: name = “Python Programming”
+
+Triple quotes are used for: - Multi-line strings - Documentation strings
+
+3.  FEATURES OF STRINGS
+
+4.  Ordered Collection: Strings maintain the order of characters.
+
+5.  Immutable: Strings cannot be changed after creation.
+
+6.  Supports Indexing: Each character has an index number.
+
+Example: Python
+
+Index: P y t h o n 0 1 2 3 4 5
+
+4.  STRING INDEXING
+
+Syntax: string[index]
+
+Example: language = “Python” print(language[1])
+
+Output: y
+
+5.  NEGATIVE INDEXING
+
+Negative indexing accesses characters from the end.
+
+Example: word = “Python”
+
+print(word[-1]) print(word[-2])
+
+Output: n o
+
+6.  STRING SLICING
+
+Syntax: string[start:end:step]
+
+Example: text = “Python” print(text[0:3])
+
+Output: Pyt
+
+The ending index is not included.
+
+7.  REVERSING A STRING
+
+Example: text = “Python” print(text[::-1])
+
+Output: nohtyP
+
+8.  STRING CONCATENATION
+
+Concatenation means joining strings.
+
+The + operator is used.
+
+Example: first = “Python” second = “Programming”
+
+result = first + ” ” + second
+
+9.  STRING REPETITION
+
+The * operator repeats strings.
+
+Example: word = “Hi” print(word * 3)
+
+10. STRING LENGTH
+
+len() returns the number of characters.
+
+Example: text = “Python” print(len(text))
+
+Output: 6
+
+11. CHECKING STRING DATA TYPE
+
+Use type().
+
+Example: name = “Python” print(type(name))
+
+Output: <class ‘str’>
+
+12. STRING METHODS
+
+upper(): Converts characters into uppercase.
+
+lower(): Converts characters into lowercase.
+
+capitalize(): Converts first character into uppercase.
+
+title(): Converts first letter of every word into uppercase.
+
+strip(): Removes spaces from beginning and end.
+
+replace(): Replaces a word or character.
+
+split(): Splits a string into a list.
+
+join(): Joins elements of a list into a string.
+
+find(): Finds the position of a substring.
+
+count(): Counts occurrences of a character.
+
+startswith(): Checks whether a string starts with specific characters.
+
+endswith(): Checks whether a string ends with specific characters.
+
+13. STRING FORMATTING
+
+String formatting inserts variables inside strings.
+
+Using f-string:
+
+Example: name = “Saurav” age = 21
+
+print(f”My name is {name} and my age is {age}“)
+
+Using format():
+
+Example: name = “Saurav”
+
+print(“My name is {}”.format(name))
+
+14. ESCAPE CHARACTERS
+
+Escape characters provide special formatting.
+
+New line:
+
+Tab: ingle quote: '
+
+Double quote: "
+
+15. CHECKING STRING MEMBERSHIP
+
+Use: - in - not in
+
+Example: text = “Python Programming”
+
+print(“Python” in text)
+
+Output: True
+
+16. LOOPING THROUGH STRINGS
+
+Example:
+
+text = “Python”
+
+for character in text: print(character)
+
+Output: P y t h o n
+
+17. STRING COMPARISON
+
+Strings can be compared using: - == - != - < - >
+
+Example:
+
+a = “Python” b = “Python”
+
+print(a == b)
+
+Output: True
+
+18. CONVERTING OTHER DATA TYPES INTO STRINGS
+
+Use str().
+
+Example:
+
+age = 21 text = str(age)
+
+19. REAL LIFE EXAMPLES OF STRINGS
+
+User Information: username = “saurav123” email = “abc@gmail.com”
+
+Data Processing: sentence = “Python is powerful”
+
+File Names: filename = “student_data.csv”
+
+API Data: response = “Success”
+
+20. COMMON BEGINNER MISTAKES
+
+Mistake 1: Forgetting quotes.
+
+Wrong: name = Python
+
+Correct: name = “Python”
+
+Mistake 2: Trying to modify characters.
+
+Strings are immutable.
+
+Mistake 3: Mixing string and number.
+
+Wrong: print(“Age is” + age)
+
+Correct: print(“Age is” + str(age))
+
+21. QUICK REVISION
+
+-   String stores text data.
+-   Strings are created using quotes.
+-   Strings are ordered.
+-   Strings are immutable.
+-   Indexing starts from 0.
+-   Negative indexing starts from -1.
+-   Slicing extracts parts of strings.
+-   -   joins strings.
+-   -   repeats strings.
+-   len() finds string length.
+-   upper() converts to uppercase.
+-   lower() converts to lowercase.
+-   replace() replaces text.
+-   split() converts string into list.
+-   join() combines list into string.
+-   f-strings format strings easily.
+
+22. PRACTICE QUESTIONS
+
+23. What is a string in Python?
+
+24. Explain different ways to create strings.
+
+25. What is string indexing?
+
+26. Explain negative indexing with examples.
+
+27. What is string slicing?
+
+28. Why are strings immutable?
+
+29. Explain any five string methods.
+
+30. Difference between upper() and lower().
+
+31. Write a program to reverse a string.
+
+32. Write a program to count vowels in a string.
+
+33. Write a program to check whether a string contains a word.
+
+34. Write a program to format user information using f-string.
+
+END OF CHAPTER 8: STRINGS IN PYTHON PROGRAMMING

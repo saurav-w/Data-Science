@@ -1,0 +1,871 @@
+Chapter 9: Functions in Python Programming
+
+Functions are one of the most important concepts in Python programming. They help us write organized, reusable, and efficient code.
+
+In real-world programming, applications can contain thousands or millions of lines of code. Without functions, managing such large programs becomes difficult.
+
+Functions allow us to:
+
+- Divide a large program into smaller parts
+- Avoid repeating the same code
+- Improve code readability
+- Make debugging easier
+- Reuse code multiple times
+
+Functions are heavily used in:
+
+- Data Science
+- Artificial Intelligence
+- Web Development
+- Automation
+- Software Engineering
+
+
+1. What is a Function?
+
+A function is a block of reusable code that performs a specific task.
+
+Instead of writing the same code repeatedly, we create a function once and call it whenever needed.
+
+Syntax:
+
+
+def function_name():
+    # code block
+
+
+Explanation:
+
+- def → Keyword used to create a function
+- function_name → Name given to the function
+- () → Parentheses used for parameters
+- : → Indicates the beginning of the function block
+- Indented code → Statements executed by the function
+
+
+Example:
+
+
+def greet():
+    print("Hello Python")
+
+greet()
+
+
+Output:
+
+
+Hello Python
+
+
+Explanation:
+
+Here:
+
+greet() is created as a function.
+
+When we call:
+
+
+greet()
+
+
+the function executes its code.
+
+
+2. Advantages of Using Functions
+
+Functions provide many benefits:
+
+
+1. Code Reusability
+
+A function can be used multiple times.
+
+Example:
+
+
+def welcome():
+    print("Welcome to Python")
+
+welcome()
+welcome()
+welcome()
+
+
+Output:
+
+
+Welcome to Python
+Welcome to Python
+Welcome to Python
+
+
+The same code does not need to be written repeatedly.
+
+
+2. Reduces Code Duplication
+
+Without functions:
+
+
+print("Hello")
+print("Hello")
+print("Hello")
+
+
+With functions:
+
+
+def hello():
+    print("Hello")
+
+hello()
+hello()
+hello()
+
+
+
+3. Easy Debugging
+
+If an error occurs, we can check a specific function instead of searching through the entire program.
+
+
+4. Improves Program Structure
+
+Large programs can be divided into smaller manageable sections.
+
+Example:
+
+A banking application can have:
+
+
+login()
+deposit()
+withdraw()
+check_balance()
+
+
+Each task has its own function.
+
+
+3. Types of Functions in Python
+
+Python functions are mainly divided into two types:
+
+1. Built-in Functions
+2. User-defined Functions
+
+
+1. Built-in Functions
+
+Built-in functions are already provided by Python.
+
+Examples:
+
+print()
+
+Used to display output.
+
+
+print("Hello")
+
+
+
+len()
+
+Returns length of an object.
+
+
+name = "Python"
+print(len(name))
+
+
+Output:
+
+
+6
+
+
+
+type()
+
+Checks data type.
+
+
+x = 10
+print(type(x))
+
+
+Output:
+
+
+<class 'int'>
+
+
+
+input()
+
+Takes input from the user.
+
+
+name = input("Enter name: ")
+print(name)
+
+
+
+Other built-in functions:
+
+
+int()
+float()
+str()
+max()
+min()
+sum()
+range()
+sorted()
+
+
+
+2. User-defined Functions
+
+Functions created by programmers are called user-defined functions.
+
+Example:
+
+
+def add():
+    a = 10
+    b = 20
+    print(a + b)
+
+add()
+
+
+Output:
+
+
+30
+
+
+
+4. Creating and Calling Functions
+
+Creating a function:
+
+
+def function_name():
+    statements
+
+
+Calling a function:
+
+
+function_name()
+
+
+
+Example:
+
+
+def message():
+    print("Learning Python")
+
+message()
+
+
+Output:
+
+
+Learning Python
+
+
+
+5. Function Parameters and Arguments
+
+Parameters allow functions to receive data.
+
+
+Parameter
+
+A parameter is a variable written during function creation.
+
+Example:
+
+
+def greet(name):
+    print("Hello", name)
+
+
+Here:
+
+name is a parameter.
+
+
+Argument
+
+An argument is the actual value passed when calling a function.
+
+Example:
+
+
+greet("Saurav")
+
+
+Here:
+
+"Saurav" is an argument.
+
+
+Complete example:
+
+
+def greet(name):
+    print("Hello", name)
+
+greet("Saurav")
+
+
+Output:
+
+
+Hello Saurav
+
+
+
+6. Types of Function Arguments
+
+Python supports different types of arguments:
+
+1. Positional Arguments
+2. Keyword Arguments
+3. Default Arguments
+4. Variable-length Arguments
+
+
+1. Positional Arguments
+
+Arguments are passed according to their position.
+
+Example:
+
+
+def student(name, age):
+    print(name)
+    print(age)
+
+student("Saurav", 21)
+
+
+Output:
+
+
+Saurav
+21
+
+
+Order matters.
+
+
+2. Keyword Arguments
+
+Arguments are passed using parameter names.
+
+Example:
+
+
+def student(name, age):
+    print(name)
+    print(age)
+
+student(age=21, name="Saurav")
+
+
+Output:
+
+
+Saurav
+21
+
+
+Order does not matter.
+
+
+3. Default Arguments
+
+A parameter can have a default value.
+
+Example:
+
+
+def country(name="Nepal"):
+    print(name)
+
+country()
+
+
+Output:
+
+
+Nepal
+
+
+Another call:
+
+
+country("India")
+
+
+Output:
+
+
+India
+
+
+
+4. Variable-Length Arguments
+
+Used when we do not know the number of arguments.
+
+There are two types:
+
+- *args
+- **kwargs
+
+
+*args
+
+Allows multiple positional arguments.
+
+Example:
+
+
+def numbers(*values):
+    print(values)
+
+numbers(10, 20, 30, 40)
+
+
+Output:
+
+
+(10,20,30,40)
+
+
+
+**kwargs
+
+Allows multiple keyword arguments.
+
+Example:
+
+
+def student(**details):
+    print(details)
+
+student(name="Saurav", age=21)
+
+
+Output:
+
+
+{'name':'Saurav','age':21}
+
+
+
+7. Returning Values from Functions
+
+Functions can return results using the return statement.
+
+
+Example:
+
+
+def add(a, b):
+    return a + b
+
+result = add(10, 20)
+print(result)
+
+
+Output:
+
+
+30
+
+
+
+Difference between print and return:
+
+print()
+
+Displays output.
+
+
+print(10+20)
+
+
+return
+
+Sends value back to the caller.
+
+
+return 10+20
+
+
+
+8. Multiple Return Values
+
+Python allows returning multiple values.
+
+Example:
+
+
+def calculation(a, b):
+    return a + b, a - b
+
+result = calculation(10, 5)
+print(result)
+
+
+Output:
+
+
+(15,5)
+
+
+
+9. Local and Global Variables
+
+Variables inside and outside functions have different scopes.
+
+
+Local Variable
+
+A variable created inside a function.
+
+It can only be accessed inside that function.
+
+Example:
+
+
+def test():
+    x = 10
+    print(x)
+
+test()
+
+
+
+Global Variable
+
+A variable created outside a function.
+
+It can be accessed throughout the program.
+
+Example:
+
+
+x = 20
+
+def test():
+    print(x)
+
+test()
+
+
+Output:
+
+
+20
+
+
+
+10. Lambda Functions
+
+A lambda function is a small anonymous function.
+
+It is created using the lambda keyword.
+
+Syntax:
+
+
+lambda arguments : expression
+
+
+
+Example:
+
+
+square = lambda x: x * x
+print(square(5))
+
+
+Output:
+
+
+25
+
+
+
+Normal function:
+
+
+def square(x):
+    return x * x
+
+
+Lambda:
+
+
+lambda x:x*x
+
+
+
+11. Nested Functions
+
+A function inside another function is called a nested function.
+
+Example:
+
+
+def outer():
+    def inner():
+        print("Inside function")
+    inner()
+
+outer()
+
+
+Output:
+
+
+Inside function
+
+
+
+12. Recursive Functions
+
+A function that calls itself is called a recursive function.
+
+Example:
+
+Finding factorial:
+
+
+def factorial(n):
+    if n == 1:
+        return 1
+    return n * factorial(n - 1)
+
+print(factorial(5))
+
+
+Output:
+
+
+120
+
+
+
+13. Docstrings in Functions
+
+A docstring explains what a function does.
+
+Example:
+
+
+def add(a, b):
+    """This function adds two numbers."""
+    return a + b
+
+
+Access docstring:
+
+
+print(add.__doc__)
+
+
+
+14. Passing Different Data Types to Functions
+
+Functions can accept any data type.
+
+Example:
+
+
+def display(data):
+    print(data)
+
+display("Python")
+display([1, 2, 3])
+display({"name": "Saurav"})
+
+
+
+15. Functions with Lists
+
+Example:
+
+
+def total(numbers):
+    return sum(numbers)
+
+marks = [80, 90, 85]
+print(total(marks))
+
+
+Output:
+
+
+255
+
+
+
+16. Functions in Data Science
+
+Functions are extremely important in Data Science.
+
+Examples:
+
+Data cleaning:
+
+
+def clean_data(data):
+    # remove missing values
+    return data
+
+
+Calculating average:
+
+
+def average(numbers):
+    return sum(numbers) / len(numbers)
+
+
+Machine Learning:
+
+Functions are used for:
+
+- Data preprocessing
+- Feature engineering
+- Model evaluation
+- Data transformation
+
+
+17. Common Beginner Mistakes
+
+Mistake 1: Forgetting indentation
+
+Wrong:
+
+
+def hello():
+print("Hello")
+
+
+Correct:
+
+
+def hello():
+    print("Hello")
+
+
+
+Mistake 2: Calling function before creating it
+
+Wrong:
+
+
+hello()
+
+def hello():
+    print("Hello")
+
+
+Correct:
+
+
+def hello():
+    print("Hello")
+
+hello()
+
+
+
+Mistake 3: Forgetting parentheses
+
+Wrong:
+
+
+hello
+
+
+Correct:
+
+
+hello()
+
+
+
+Mistake 4: Not returning values
+
+Wrong:
+
+
+def add(a, b):
+    print(a + b)
+
+
+Correct:
+
+
+def add(a, b):
+    return a + b
+
+
+
+18. Quick Revision
+
+- Functions are reusable blocks of code.
+- Created using def.
+- Called using function name with parentheses.
+- Functions improve code organization.
+- Parameters receive values.
+- Arguments pass values.
+- return sends results back.
+- Python supports different argument types.
+- Local variables exist inside functions.
+- Global variables exist outside functions.
+- Lambda creates small anonymous functions.
+- Recursive functions call themselves.
+- Functions are essential for Data Science and AI.
+
+
+Practice Questions
+
+1. What is a function in Python?
+2. Explain advantages of functions.
+3. Differentiate built-in and user-defined functions.
+4. Explain parameters and arguments.
+5. Explain different types of function arguments.
+6. What is the difference between print() and return?
+7. Explain local and global variables.
+8. What are lambda functions?
+9. Explain recursive functions with examples.
+10. Write a function to calculate the factorial of a number.
+11. Write a function to check whether a number is even or odd.
+12. Write a function to find the average of numbers.
+
+
+This completes Chapter 9: Functions in Python Programming.
+
+Next recommended chapters for your Python + Data Science path:
+
+Chapter 10: Modules and Packages in Python
+→ Chapter 11: File Handling
+→ Chapter 12: Exception Handling
+→ Chapter 13: Object-Oriented Programming (OOP)
+
+These topics will move you from basic Python programming toward professional-level development.
