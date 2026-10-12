@@ -1,0 +1,1544 @@
+Object-Oriented Programming in Python
+Object-Oriented Programming, or OOP, is a way of writing programs by organizing code around objects.
+In OOP, we think of a program as a collection of real-world things, such as:
+- a student
+- a car
+- a bank account
+- a laptop
+- a book
+
+Each of these things has:
+- data or properties such as name, age, color, price
+- behaviors or functions such as study, drive, deposit, play
+Python supports OOP very well, and it is one of the most important programming styles used in real software development.
+
+1. What is Object-Oriented Programming?
+OOP is a programming approach where we create classes and objects to represent real-world entities.
+Instead of writing only functions and variables separately, we group related data and behavior together inside a class.
+
+For example:
+A Student has:
+- name
+- age
+- grade
+A Student can:
+- study
+- attend class
+- take exam
+This is a very natural way of designing programs.
+
+2. Why Use OOP?
+OOP is useful because it makes programs:
+- easier to understand
+- easier to maintain
+- easier to reuse
+- easier to modify
+- more organized
+It is especially helpful for large programs.
+3. Main Concepts of OOP
+The four main pillars of OOP are:
+1. Class
+2. Object
+3. Encapsulation
+4. Inheritance
+5. Polymorphism
+6. Abstraction
+These are the most important ideas in object-oriented programming.
+4. What is a Class?
+A class is a blueprint or template for creating objects.
+Think of a class like a design plan for a house.
+The class tells us:
+- what data an object will have
+- what actions an object can perform
+Example
+class Student:    pass
+
+
+Here, Student is a class.
+The pass statement means “do nothing for now.”
+5. What is an Object?
+An object is an instance of a class.
+If a class is a blueprint, then an object is the actual thing made from that blueprint.
+Example
+class Student:    passs1 = Student()
+
+
+Here:
+- Student is the class
+- s1 is an object
+6. Attributes and Methods
+A class usually contains:
+- attributes → data or properties
+- methods → functions inside a class
+Example
+class Student:    name = "Saurav"    age = 21    def study(self):        print("Student is studying")
+
+
+Here:
+- name and age are attributes
+- study() is a method
+7. The self Keyword
+self refers to the current object.
+When we define methods inside a class, we use self as the first parameter.
+Example
+class Student:    def study(self):        print("Studying")
+
+
+When Python calls the method, it automatically passes the object as self.
+8. Creating Objects with Data
+Usually, we want each object to have its own values.
+For that, we use a special method called the constructor.
+9. Constructor in Python
+The constructor is the __init__() method.
+It runs automatically when an object is created.
+Example
+class Student:    def __init__(self, name, age):        self.name = name        self.age = ages1 = Student("Saurav", 21)print(s1.name)print(s1.age)
+
+
+Output
+Saurav21
+
+
+Explanation
+- __init__() initializes object values
+- self.name = name stores the name inside the object
+- self.age = age stores the age inside the object
+10. Methods in Class
+Methods are functions inside a class.
+Example
+class Student:    def __init__(self, name, age):        self.name = name        self.age = age    def display(self):        print("Name:", self.name)        print("Age:", self.age)s1 = Student("Saurav", 21)s1.display()
+
+
+Output
+Name: SauravAge: 21
+
+
+11. Real-Life Example of OOP
+Example: Car
+A car has:
+- brand
+- color
+- model
+A car can:
+- start
+- stop
+- accelerate
+This can be written in Python as:
+class Car:    def __init__(self, brand, color):        self.brand = brand        self.color = color    def start(self):        print(self.brand, "is starting")car1 = Car("Toyota", "Red")car1.start()
+
+
+Output
+Toyota is starting
+
+
+12. Encapsulation
+Encapsulation means hiding data and keeping it safe inside a class.
+It is used to protect data from being changed directly.
+Python does not fully enforce privacy, but it follows naming conventions.
+Example
+class BankAccount:    def __init__(self, balance):        self.balance = balance
+
+
+Here, data is stored inside the class.
+Public, Protected, and Private Members
+Public
+Accessible from anywhere.
+self.name
+
+
+Protected
+Conventional protected member:
+self._name
+
+
+Private
+More hidden using double underscore:
+self.__balance
+
+
+13. Inheritance
+Inheritance allows one class to use the properties and methods of another class.
+The new class is called the child class or derived class.
+The original class is called the parent class or base class.
+Example
+class Person:    def __init__(self, name):        self.name = name    def show(self):        print(self.name)class Student(Person):    passs1 = Student("Saurav")s1.show()
+
+
+Output
+Saurav
+
+
+Explanation
+Student inherits from Person.
+So Student can use the show() method from Person.
+Why Use Inheritance?
+- saves code
+- improves reusability
+- helps build relationships between classes
+14. Types of Inheritance
+Python supports several types of inheritance:
+1. Single Inheritance
+2. Multiple Inheritance
+3. Multilevel Inheritance
+4. Hierarchical Inheritance
+5. Hybrid Inheritance
+1. Single Inheritance
+One child class inherits from one parent class.
+class A:    passclass B(A):    pass
+
+
+2. Multiple Inheritance
+A child class inherits from more than one parent class.
+class A:    passclass B:    passclass C(A, B):    pass
+
+
+3. Multilevel Inheritance
+A class inherits from another derived class.
+class A:    passclass B(A):    passclass C(B):    pass
+
+
+4. Hierarchical Inheritance
+More than one child class inherits from the same parent class.
+class A:    passclass B(A):    passclass C(A):    pass
+
+
+15. Polymorphism
+Polymorphism means many forms.
+It allows the same function or method name to work differently depending on the object.
+Example
+class Dog:    def sound(self):        print("Bark")class Cat:    def sound(self):        print("Meow")d = Dog()c = Cat()d.sound()c.sound()
+
+
+Output
+BarkMeow
+
+
+Same method name sound(), but different behavior.
+Method Overriding
+When a child class gives its own version of a parent class method, it is called method overriding.
+Example
+class Parent:    def show(self):        print("Parent class")class Child(Parent):    def show(self):        print("Child class")c = Child()c.show()
+
+
+Output
+Child class
+
+
+16. Abstraction
+Abstraction means hiding unnecessary details and showing only the important parts.
+For example, when you drive a car, you use:
+- steering
+- brake
+- accelerator
+You do not need to know the engine’s internal working.
+In Python, abstraction is often done using abstract classes.
+17. Benefits of OOP
+OOP has many advantages:
+- code reusability
+- better organization
+- easier maintenance
+- easy debugging
+- real-world modeling
+- improved security
+- scalability
+18. OOP vs Procedural Programming
+Procedural Programming
+- focuses on functions and procedures
+- code is written step by step
+- less suitable for large complex systems
+Object-Oriented Programming
+- focuses on objects and classes
+- groups data and behavior together
+- better for large programs
+19. Example of Complete OOP Program
+class Student:    def __init__(self, name, age):        self.name = name        self.age = age    def display(self):        print("Name:", self.name)        print("Age:", self.age)s1 = Student("Saurav", 21)s2 = Student("Ram", 22)s1.display()s2.display()
+
+
+Output
+Name: SauravAge: 21Name: RamAge: 22
+
+
+20. Common Beginner Mistakes
+1. Forgetting self
+Wrong:
+class Student:    def display():        print("Hello")
+
+
+Correct:
+class Student:    def display(self):        print("Hello")
+
+
+2. Not creating object
+Wrong:
+Student.display()
+
+
+Correct:
+s1 = Student("Saurav", 21)s1.display()
+
+
+3. Confusing class and object
+- Class = blueprint
+- Object = real instance
+
+
+
+
+
+
+Class in Python Programming
+A class is one of the core ideas in object-oriented programming. It is a blueprint or template used to create objects.
+A class tells Python:
+- what data an object should have
+- what actions an object can perform
+In simple words, a class is like a design plan, and an object is the real thing created from that plan.
+1. What is a Class?
+A class is a user-defined data type that combines:
+- attributes → data or properties
+- methods → functions that describe behavior
+Example:
+A Student class may contain:
+- name
+- age
+- roll number
+And it may have methods like:
+- study()
+- attend_class()
+- take_exam()
+2. Why Do We Use Classes?
+Classes help us organize code in a better way.
+They are useful because they:
+- keep related data and functions together
+- make code reusable
+- make large programs easier to manage
+- help model real-world objects
+- improve readability and maintenance
+Without classes, related data may be scattered across many variables and functions.
+3. Syntax of a Class
+class ClassName:    # attributes    # methods
+
+
+Example:
+class Student:    pass
+
+
+Here:
+- class is the keyword
+- Student is the class name
+- pass means the class is empty for now
+4. Class vs Object
+Class
+A class is the blueprint.
+Object
+An object is the actual instance created from the class.
+Example:
+class Student:    passs1 = Student()
+
+
+Here:
+- Student is the class
+- s1 is the object
+Think of it like this:
+- Class = car design
+- Object = real car made from that design
+5. Attributes in a Class
+Attributes are the variables inside a class.
+They store information about an object.
+Example:
+class Student:    name = "Saurav"    age = 21
+
+
+Here:
+- name is an attribute
+- age is an attribute
+Attributes can be of two types:
+- class attributes
+- instance attributes
+6. Class Attributes
+Class attributes are shared by all objects of the class.
+Example:
+class Student:    college = "ACHS"
+
+
+Every student object can access college, and it stays the same unless changed at the class level.
+7. Instance Attributes
+Instance attributes belong to a specific object.
+They are usually created inside the constructor using self.
+Example:
+class Student:    def __init__(self, name, age):        self.name = name        self.age = age
+
+
+Here:
+- self.name is an instance attribute
+- self.age is an instance attribute
+Each object can have different values.
+8. Methods in a Class
+Methods are functions defined inside a class.
+They describe what an object can do.
+Example:
+class Student:    def study(self):        print("Student is studying")
+
+
+Here study() is a method.
+9. The self Keyword
+self refers to the current object.
+It is used to access attributes and methods of that object.
+Example:
+class Student:    def display(self):        print("Hello")
+
+
+When you call the method on an object, Python automatically passes that object as self.
+self is not a keyword, but it is the standard and recommended name.
+10. Constructor in a Class
+A constructor is a special method called __init__().
+It runs automatically when an object is created.
+It is used to initialize values.
+Example:
+class Student:    def __init__(self, name, age):        self.name = name        self.age = age
+
+
+When you create an object:
+s1 = Student("Saurav", 21)
+
+
+Python automatically calls __init__().
+11. Example of a Class with Object
+class Student:    def __init__(self, name, age):        self.name = name        self.age = age    def display(self):        print("Name:", self.name)        print("Age:", self.age)s1 = Student("Saurav", 21)s1.display()
+
+
+Output:
+Name: SauravAge: 21
+
+
+Explanation
+- Student is the class
+- s1 is the object
+- __init__() sets the values
+- display() prints the object data
+12. How to Access Class Members
+You can access attributes and methods using the dot operator .
+Example:
+print(s1.name)s1.display()
+
+
+13. Class with Multiple Objects
+A class can create many objects.
+Example:
+class Student:    def __init__(self, name, age):        self.name = name        self.age = ages1 = Student("Saurav", 21)s2 = Student("Ram", 22)print(s1.name)print(s2.name)
+
+
+Output:
+SauravRam
+
+
+Each object stores its own data.
+14. Real-Life Example of a Class
+Car Class
+class Car:    def __init__(self, brand, color):        self.brand = brand        self.color = color    def start(self):        print(self.brand, "is starting")
+
+
+Usage:
+car1 = Car("Toyota", "Red")car1.start()
+
+
+Output:
+Toyota is starting
+
+
+This shows how a class can represent a real-world object.
+15. Important Points About Classes
+- A class is a blueprint.
+- Objects are created from classes.
+- A class can have attributes and methods.
+- self refers to the current object.
+- __init__() initializes object values.
+- A class can create many objects.
+- Classes help organize code better.
+16. Class Naming Rules
+Class names usually follow these rules:
+- start with a capital letter
+- use CamelCase style
+- should be meaningful
+Examples:
+- Student
+- Car
+- BankAccount
+- EmployeeRecord
+17. Difference Between Class and Object
+Class	Object
+Blueprint	Actual instance
+Defines structure	Contains real values
+Created once	Can be created many times
+
+
+Example:
+- Student is a class
+- s1, s2 are objects
+18. Common Beginner Mistakes
+Mistake 1: Forgetting self
+class Student:    def display():        print("Hello")
+
+
+This is wrong because instance methods need self.
+Correct:
+class Student:    def display(self):        print("Hello")
+
+
+Mistake 2: Creating object incorrectly
+Wrong:
+Student.display()
+
+
+Correct:
+s1 = Student()s1.display()
+
+
+Mistake 3: Confusing class variable and instance variable
+- Class variable → shared by all objects
+- Instance variable → specific to one object
+
+
+
+Object in Python Programming
+
+An object is one of the most important concepts in Python, especially in Object-Oriented Programming (OOP).
+An object is a real instance created from a class.
+If a class is a blueprint, then an object is the actual thing made from that blueprint.
+1. What is an Object?
+An object is a combination of:
+- data → called attributes
+- behavior → called methods
+Simple idea
+Think of a class like a car design.
+- The class says what a car should have: brand, color, speed
+- The object is the real car made from that design
+Example:
+- Car is the class
+- car1, car2 are objects
+2. Object as an Instance of a Class
+When we create an object from a class, we say the object is an instance of that class.
+Example
+class Student:    passs1 = Student()
+
+
+Here:
+- Student is the class
+- s1 is the object
+So, s1 is an instance of Student.
+3. Why Do We Use Objects?
+Objects help us represent real-world things in code.
+They are useful because they:
+- store data
+- keep code organized
+- make programs reusable
+- make large programs easier to manage
+- allow us to create many real-world models in Python
+4. Object and Class Relationship
+A class is the blueprint, and an object is the actual created thing.
+Example
+class Student:    passs1 = Student()s2 = Student()
+
+
+Here:
+- Student is one class
+- s1 and s2 are two different objects
+Both objects come from the same class, but they can store different values.
+5. Attributes of an Object
+Attributes are variables that belong to an object.
+Example:
+class Student:    def __init__(self, name, age):        self.name = name        self.age = age
+
+
+Here:
+- name is an attribute
+- age is an attribute
+Each object can have its own attribute values.
+6. Methods of an Object
+Methods are functions inside a class that define the behavior of an object.
+Example:
+class Student:    def study(self):        print("Student is studying")
+
+
+Here study() is a method.
+7. Creating an Object
+To create an object, we call the class name like a function.
+Syntax
+object_name = ClassName()
+
+
+Example
+class Student:    passs1 = Student()
+
+
+8. Object with Constructor
+Usually, we want to give values to an object when we create it.
+For that, we use the constructor __init__().
+Example
+class Student:    def __init__(self, name, age):        self.name = name        self.age = ages1 = Student("Saurav", 21)print(s1.name)print(s1.age)
+
+
+Output
+Saurav21
+
+
+Explanation
+- s1 is an object
+- "Saurav" and 21 are stored inside that object
+- self.name and self.age belong to s1
+9. Accessing Object Data
+You can access object attributes using the dot . operator.
+Example
+print(s1.name)print(s1.age)
+
+
+You can also call methods using dot notation:
+s1.study()
+
+
+10. Real-Life Example of Object
+Example: Car Object
+class Car:    def __init__(self, brand, color):        self.brand = brand        self.color = color    def start(self):        print(self.brand, "is starting")car1 = Car("Toyota", "Red")car1.start()
+
+
+Output
+Toyota is starting
+
+
+Explanation
+- Car is the class
+- car1 is the object
+- brand and color are its attributes
+- start() is its method
+11. Multiple Objects
+One class can create many objects.
+Example
+class Student:    def __init__(self, name, age):        self.name = name        self.age = ages1 = Student("Saurav", 21)s2 = Student("Ram", 22)print(s1.name)print(s2.name)
+
+
+Output
+SauravRam
+
+
+Each object has its own separate data.
+12. Object Identity
+Every object in Python has its own identity in memory.
+You can check whether two variables point to the same object using is.
+Example
+a = [1, 2]b = ac = [1, 2]print(a is b)print(a is c)
+
+
+Output
+TrueFalse
+
+
+Explanation
+- a is b → True because both refer to the same object
+- a is c → False because they are different objects with the same content
+13. Object vs Variable
+A variable is just a name that refers to an object.
+Example:
+x = 10
+
+
+Here:
+- x is a variable
+- 10 is an object of type integer
+So in Python, variables hold references to objects.
+14. Object of Built-in Types
+In Python, even simple values are objects.
+Examples:
+- 10 is an integer object
+- "Python" is a string object
+- [1, 2, 3] is a list object
+Example
+x = 10name = "Python"nums = [1, 2, 3]
+
+
+These are all objects in Python.
+15. Object and Memory
+When an object is created, Python stores it in memory.
+The variable name points to that memory location.
+Example:
+x = 10y = x
+
+
+Here both x and y refer to the same integer object 10.
+16. Object Methods in Python
+Many built-in objects have methods.
+String object methods
+text = "python"print(text.upper())
+
+
+List object methods
+numbers = [1, 2, 3]numbers.append(4)print(numbers)
+
+
+This shows that objects can have their own methods.
+17. Important Properties of Objects
+An object may have:
+- identity → where it is stored in memory
+- type → what kind of object it is
+- value → the actual data it contains
+Example
+x = 25print(type(x))
+
+
+Here:
+- identity = memory address
+- type = int
+- value = 25
+18. Class Object Example with Methods
+class Book:    def __init__(self, title, author):        self.title = title        self.author = author    def display(self):        print("Title:", self.title)        print("Author:", self.author)b1 = Book("Python Basics", "Saurav")b1.display()
+
+
+Output
+Title: Python BasicsAuthor: Saurav
+
+
+19. Common Beginner Mistakes
+Mistake 1: Confusing class and object
+- Class = blueprint
+- Object = instance created from class
+Mistake 2: Forgetting to create an object
+Student.display()
+
+
+This is wrong if display() is an instance method.
+Correct:
+s1 = Student("Saurav", 21)s1.display()
+
+
+Mistake 3: Trying to use object attributes before creating them
+Always create the object first.
+
+
+Encapsulation in Python Programming
+Encapsulation is one of the most important concepts in Object-Oriented Programming (OOP). It means bundling data and methods together inside a class and restricting direct access to the data from outside the class.
+In simple words, encapsulation helps us protect data and control how it is accessed or modified.
+1. What is Encapsulation?
+Encapsulation means keeping the internal details of an object hidden and allowing access only through specific methods.
+A class can contain:
+- data → variables or attributes
+- methods → functions that work on that data
+The data is stored inside the class, and the outside world should not directly change it without permission.
+2. Why Do We Use Encapsulation?
+Encapsulation is used to:
+- protect data from unwanted changes
+- improve security
+- keep code organized
+- make programs easier to maintain
+- control how data is accessed
+- reduce complexity
+It is very useful in real-world applications like:
+- bank accounts
+- student records
+- login systems
+- employee systems
+- online shopping systems
+3. Real-Life Example of Encapsulation
+Think about a bank account.
+You can:
+- deposit money
+- withdraw money
+- check balance
+But you should not directly change the balance from outside.
+For example, you should not do this:
+account.balance = -50000
+
+
+That would be unsafe.
+Instead, the bank gives you methods like:
+- deposit()
+- withdraw()
+- get_balance()
+This is encapsulation in practice.
+4. Encapsulation in Python
+Python does not enforce strict private data like some other languages, but it follows naming conventions to indicate whether data is public, protected, or private.
+Python uses:
+- public members
+- protected members
+- private members
+5. Public Members
+Public members are accessible from anywhere.
+Example
+class Student:    def __init__(self, name):        self.name = name
+
+
+Here, name is public.
+You can access it directly:
+s1 = Student("Saurav")print(s1.name)
+
+
+Output:
+Saurav
+
+
+Public members are not hidden.
+6. Protected Members
+Protected members are written with a single underscore _.
+Example:
+class Student:    def __init__(self, name):        self._name = name
+
+
+This means:
+- it should be treated as protected
+- it should not be accessed directly from outside the class in normal practice
+Python does not fully prevent access, but the underscore is a warning to programmers.
+7. Private Members
+Private members are written with double underscores __.
+Example:
+class Student:    def __init__(self, name):        self.__name = name
+
+
+This means the attribute is meant to be hidden inside the class.
+Direct access from outside is not recommended and usually not possible in the normal way.
+8. Example of Encapsulation
+class BankAccount:    def __init__(self, balance):        self.__balance = balance    def deposit(self, amount):        self.__balance += amount    def withdraw(self, amount):        if amount <= self.__balance:            self.__balance -= amount        else:            print("Insufficient balance")    def get_balance(self):        return self.__balanceaccount = BankAccount(1000)account.deposit(500)account.withdraw(300)print(account.get_balance())
+
+
+Output
+1200
+
+
+Explanation
+- __balance is private
+- outside code cannot directly change it safely
+- methods like deposit(), withdraw(), and get_balance() control access
+9. How Encapsulation Protects Data
+Encapsulation prevents direct modification of important data.
+For example, if balance were public:
+account.balance = -10000
+
+
+This would break the rule of the bank account.
+Encapsulation makes sure data changes only through controlled methods.
+10. Encapsulation with Getter and Setter Methods
+When data is private, we often use:
+- getter methods to read data
+- setter methods to change data
+Getter
+Used to access private data.
+Setter
+Used to update private data safely.
+Example
+class Student:    def __init__(self, name, age):        self.__name = name        self.__age = age    def get_name(self):        return self.__name    def set_name(self, name):        self.__name = name    def get_age(self):        return self.__age    def set_age(self, age):        self.__age = ages1 = Student("Saurav", 21)print(s1.get_name())print(s1.get_age())s1.set_name("Ram")s1.set_age(22)print(s1.get_name())print(s1.get_age())
+
+
+Output
+Saurav21Ram22
+
+
+11. Benefits of Getter and Setter Methods
+Getter and setter methods:
+- allow controlled access
+- prevent invalid values
+- protect private data
+- make code easier to update later
+Example:
+You can stop someone from setting age to a negative number.
+def set_age(self, age):    if age > 0:        self.__age = age    else:        print("Invalid age")
+
+
+12. Encapsulation and Data Hiding
+Encapsulation is closely related to data hiding.
+- Encapsulation means wrapping data and methods together.
+- Data hiding means hiding the internal details from outside access.
+They work together to make code safer and cleaner.
+13. Encapsulation in a Student Class
+class Student:    def __init__(self, name, marks):        self.__name = name        self.__marks = marks    def display(self):        print("Name:", self.__name)        print("Marks:", self.__marks)    def set_marks(self, marks):        if marks >= 0:            self.__marks = marks        else:            print("Marks cannot be negative")s1 = Student("Saurav", 85)s1.display()s1.set_marks(90)s1.display()
+
+
+Output
+Name: SauravMarks: 85Name: SauravMarks: 90
+
+
+14. Advantages of Encapsulation
+Encapsulation has many advantages:
+1. Data Protection
+Sensitive data is protected from direct changes.
+2. Better Control
+You control how data is accessed or updated.
+3. Easy Maintenance
+If you want to change internal logic, you can do it inside the class without affecting outside code.
+4. Improved Security
+Private data is safer.
+5. Cleaner Code
+The program becomes more organized and understandable.
+15. Disadvantages or Limitations
+Encapsulation also has a few limitations:
+- It may require more code
+- It can make programs a little longer
+- Beginners may find private variables confusing at first
+Still, the benefits are much greater than the limitations.
+16. Accessing Private Variables in Python
+Although private variables are hidden by naming convention, Python still allows internal access through name mangling, but this is not recommended in normal programming.
+Example:
+class Student:    def __init__(self, name):        self.__name = name
+
+
+This does not mean data is impossible to access, but it means it should not be accessed directly.
+The correct way is to use getter and setter methods.
+17. Encapsulation vs Abstraction
+These two concepts are related but different.
+Encapsulation
+- wraps data and methods together
+- controls access to data
+Abstraction
+- hides unnecessary details
+- shows only important features
+Example:
+A bank account class uses encapsulation to protect balance, and abstraction to expose only deposit, withdraw, and balance check methods.
+18. Example: Bank Account with Encapsulation
+class BankAccount:    def __init__(self, name, balance):        self.__name = name        self.__balance = balance    def deposit(self, amount):        if amount > 0:            self.__balance += amount    def withdraw(self, amount):        if 0 < amount <= self.__balance:            self.__balance -= amount        else:            print("Invalid withdrawal")    def get_balance(self):        return self.__balance    def display(self):        print("Name:", self.__name)        print("Balance:", self.__balance)acc = BankAccount("Saurav", 5000)acc.deposit(2000)acc.withdraw(1500)acc.display()
+
+
+Output
+Name: SauravBalance: 5500
+
+
+19. Common Beginner Mistakes
+Mistake 1: Using private variable directly
+Wrong:
+print(account.__balance)
+
+
+Better:
+print(account.get_balance())
+
+
+Mistake 2: Not validating input in setter
+If you allow invalid values, encapsulation loses its purpose.
+Mistake 3: Thinking private means completely inaccessible
+In Python, privacy is mostly based on convention and name mangling, not strict blocking.
+
+
+Inheritance in Python Programming
+Inheritance is one of the most important concepts in Object-Oriented Programming (OOP). It allows one class to reuse the properties and methods of another class.
+In simple words, inheritance means:
+A child class can get features from a parent class.
+
+This helps us avoid writing the same code again and again.
+1. What is Inheritance?
+Inheritance is a mechanism in which a new class acquires the properties and behaviors of an existing class.
+- The existing class is called the parent class or base class
+- The new class is called the child class or derived class
+Example idea
+A Person class may contain:
+- name
+- age
+A Student class may also contain:
+- roll number
+- marks
+Instead of writing name and age again inside Student, we can inherit them from Person.
+2. Why Do We Use Inheritance?
+Inheritance is useful because it:
+- saves time
+- reduces code duplication
+- improves code reuse
+- makes programs easier to maintain
+- helps build relationships between classes
+- makes code more organized
+3. Basic Syntax of Inheritance
+class ParentClass:    # parent class codeclass ChildClass(ParentClass):    # child class code
+
+
+The child class is written with the parent class name inside parentheses.
+4. Simple Example of Inheritance
+class Person:    def __init__(self, name):        self.name = name    def show(self):        print("Name:", self.name)class Student(Person):    passs1 = Student("Saurav")s1.show()
+
+
+Output
+Name: Saurav
+
+
+Explanation
+- Person is the parent class
+- Student is the child class
+- Student inherits the show() method from Person
+5. Important Terms in Inheritance
+Parent Class
+The class whose features are inherited.
+Child Class
+The class that inherits features from the parent class.
+Base Class
+Another name for parent class.
+Derived Class
+Another name for child class.
+6. How Inheritance Works
+When a child class inherits from a parent class:
+- it gets all accessible attributes and methods from the parent class
+- it can use them directly
+- it can also add new attributes and methods of its own
+So inheritance helps create a hierarchy of classes.
+7. Types of Inheritance in Python
+Python supports different types of inheritance:
+1. Single Inheritance
+2. Multiple Inheritance
+3. Multilevel Inheritance
+4. Hierarchical Inheritance
+5. Hybrid Inheritance
+8. Single Inheritance
+In single inheritance, one child class inherits from one parent class.
+Example
+class A:    def showA(self):        print("Class A")class B(A):    def showB(self):        print("Class B")obj = B()obj.showA()obj.showB()
+
+
+Output
+Class AClass B
+
+
+Explanation
+- B inherits from A
+- B can use methods of both A and itself
+9. Multiple Inheritance
+In multiple inheritance, a child class inherits from more than one parent class.
+Example
+class A:    def showA(self):        print("Class A")class B:    def showB(self):        print("Class B")class C(A, B):    def showC(self):        print("Class C")obj = C()obj.showA()obj.showB()obj.showC()
+
+
+Output
+Class AClass BClass C
+
+
+Explanation
+- C inherits from both A and B
+- This is called multiple inheritance
+10. Multilevel Inheritance
+In multilevel inheritance, a class inherits from another derived class.
+Example
+class A:    def showA(self):        print("Class A")class B(A):    def showB(self):        print("Class B")class C(B):    def showC(self):        print("Class C")obj = C()obj.showA()obj.showB()obj.showC()
+
+
+Output
+Class AClass BClass C
+
+
+Explanation
+- C inherits from B
+- B inherits from A
+- So C gets features from both A and B
+11. Hierarchical Inheritance
+In hierarchical inheritance, more than one child class inherits from the same parent class.
+Example
+class A:    def showA(self):        print("Class A")class B(A):    def showB(self):        print("Class B")class C(A):    def showC(self):        print("Class C")obj1 = B()obj2 = C()obj1.showA()obj1.showB()obj2.showA()obj2.showC()
+
+
+Output
+Class AClass BClass AClass C
+
+
+Explanation
+- B and C both inherit from A
+12. Hybrid Inheritance
+Hybrid inheritance is a combination of two or more types of inheritance.
+It is a mixture of:
+- single inheritance
+- multiple inheritance
+- multilevel inheritance
+- hierarchical inheritance
+Example idea
+A system where different inheritance forms are combined.
+Hybrid inheritance is more advanced and used in complex programs.
+13. Using super() in Inheritance
+The super() function is used to call methods from the parent class.
+It is very useful when you want the child class to use parent class functionality.
+Example
+class Parent:    def __init__(self, name):        self.name = nameclass Child(Parent):    def __init__(self, name, age):        super().__init__(name)        self.age = ageobj = Child("Saurav", 21)print(obj.name)print(obj.age)
+
+
+Output
+Saurav21
+
+
+Explanation
+- super().__init__(name) calls the constructor of the parent class
+- This avoids repeating code
+14. Method Overriding
+Method overriding happens when a child class provides its own version of a method that already exists in the parent class.
+Example
+class Parent:    def show(self):        print("Parent class")class Child(Parent):    def show(self):        print("Child class")obj = Child()obj.show()
+
+
+Output
+Child class
+
+
+Explanation
+- Child class has its own show() method
+- It overrides the parent class method
+15. Accessing Parent Class Methods
+If the child class overrides a method but still wants to call the parent version, it can use super().
+Example
+class Parent:    def show(self):        print("Parent class")class Child(Parent):    def show(self):        super().show()        print("Child class")obj = Child()obj.show()
+
+
+Output
+Parent classChild class
+
+
+16. Constructor Inheritance
+A child class can also inherit a constructor from the parent class, or it can define its own constructor.
+Example
+class Person:    def __init__(self, name):        self.name = nameclass Student(Person):    passobj = Student("Saurav")print(obj.name)
+
+
+Output
+Saurav
+
+
+Here, Student uses the constructor of Person.
+17. Real-Life Example of Inheritance
+Example: Vehicle and Car
+A car is a type of vehicle.
+A Vehicle class may have:
+- speed
+- color
+A Car class may have:
+- brand
+- fuel type
+Example
+class Vehicle:    def __init__(self, color):        self.color = color    def start(self):        print("Vehicle is starting")class Car(Vehicle):    def __init__(self, color, brand):        super().__init__(color)        self.brand = brand    def display(self):        print("Color:", self.color)        print("Brand:", self.brand)c1 = Car("Red", "Toyota")c1.start()c1.display()
+
+
+Output
+Vehicle is startingColor: RedBrand: Toyota
+
+
+18. Benefits of Inheritance
+Inheritance provides many advantages:
+1. Code Reusability
+You can reuse existing code in new classes.
+2. Less Code
+No need to write the same code again.
+3. Easy Maintenance
+Changes in the parent class can affect all child classes automatically.
+4. Better Organization
+Classes are arranged in a logical hierarchy.
+5. Real-World Modeling
+Inheritance helps model real-world relationships naturally.
+19. Disadvantages or Limitations of Inheritance
+Inheritance also has some limitations:
+- can make code more complex
+- deep inheritance chains can be hard to understand
+- overuse of inheritance can reduce flexibility
+Sometimes composition is better than inheritance, depending on the problem.
+20. Inheritance vs Composition
+Inheritance
+- child class gets features from parent class
+- represents an “is-a” relationship
+Example:
+- A Car is a Vehicle
+Composition
+- one class contains another class
+- represents a “has-a” relationship
+Example:
+- A Car has an Engine
+21. Common Beginner Mistakes
+Mistake 1: Forgetting to put parent class in parentheses
+Wrong:
+class Child:    pass
+
+
+Correct:
+class Child(Parent):    pass
+
+
+Mistake 2: Not calling parent constructor when needed
+If the parent has important initialization, use super().
+Mistake 3: Confusing overriding and overloading
+Python supports method overriding, but not traditional method overloading like some other languages.
+
+Polymorphism in Python Programming
+Polymorphism is one of the most important concepts in Object-Oriented Programming (OOP). It means many forms.
+In Python, polymorphism allows the same function, method, or operator to behave differently depending on the object or data type being used.
+1. What is Polymorphism?
+The word poly means many and morphism means forms.
+So, polymorphism means:
+One thing can take many forms.
+
+In programming, this means the same name can be used for different behaviors.
+For example:
+- a sound() method can behave differently for a Dog and a Cat
+- the + operator can add numbers and also join strings
+2. Why Do We Use Polymorphism?
+Polymorphism is useful because it:
+- makes code flexible
+- improves code reusability
+- reduces complexity
+- makes programs easier to understand
+- supports real-world behavior
+It helps us write cleaner and more powerful programs.
+3. Simple Idea of Polymorphism
+Think about the word “start”.
+- A car starts differently
+- A bike starts differently
+- A computer starts differently
+The word is the same, but the action is different.
+This is polymorphism.
+4. Types of Polymorphism in Python
+Python commonly supports polymorphism in these ways:
+1. Method Overriding
+2. Operator Overloading
+3. Function Polymorphism
+4. Duck Typing
+5. Method Overriding
+Method overriding happens when a child class provides its own version of a method that already exists in the parent class.
+The method name is the same, but the behavior changes.
+Example
+class Animal:    def sound(self):        print("Animal makes a sound")class Dog(Animal):    def sound(self):        print("Dog barks")class Cat(Animal):    def sound(self):        print("Cat meows")d = Dog()c = Cat()d.sound()c.sound()
+
+
+Output
+Dog barks
+Cat meows
+
+Explanation
+- Animal has a sound() method
+- Dog overrides sound()
+- Cat also overrides sound()
+Same method name, different behavior.
+6. Operator Overloading
+Operator overloading means the same operator works differently depending on the operands.
+For example, the + operator can:
+- add numbers
+- concatenate strings
+- join lists
+Example 1: Numbers
+print(10 + 5)
+
+
+Output:
+15
+
+Example 2: Strings
+print("Python" + " Programming")
+
+
+Output:
+Python Programming
+
+Example 3: Lists
+print([1, 2] + [3, 4])
+
+
+Output:
+[1, 2, 3, 4]
+
+The same operator behaves differently based on the type of data.
+7. Function Polymorphism
+Python built-in functions can work with different data types.
+For example, len() works on:
+- strings
+- lists
+- tuples
+- dictionaries
+Example
+print(len("Python"))print(len([1, 2, 3]))print(len((10, 20, 30)))
+
+
+Output
+6
+3
+3
+
+The same function len() works on different objects.
+8. Duck Typing
+Python follows a principle called duck typing.
+The idea is:
+If it looks like a duck and sounds like a duck, then it is treated like a duck.
+
+In Python, the type of an object matters less than the behavior it supports.
+If an object has the required method, Python can use it.
+Example
+class Dog:    def speak(self):        print("Bark")class Human:    def speak(self):        print("Hello")def make_sound(obj):    obj.speak()d = Dog()h = Human()make_sound(d)make_sound(h)
+
+
+Output
+Bark
+Hello
+
+Explanation
+Both objects have a speak() method, so the function works with both.
+9. Real-Life Example of Polymorphism
+Imagine a payment system.
+You can pay using:
+- card
+- mobile wallet
+- bank transfer
+The action is the same: pay
+But the method is different.
+That is polymorphism in real life.
+10. Polymorphism with Classes
+Example
+class Bird:    def fly(self):        print("Bird can fly")class Eagle(Bird):    def fly(self):        print("Eagle flies high")class Penguin(Bird):    def fly(self):        print("Penguin cannot fly")birds = [Eagle(), Penguin()]for bird in birds:    bird.fly()
+
+
+Output
+Eagle flies high
+Penguin cannot fly
+
+Explanation
+The same method fly() behaves differently in different classes.
+11. Polymorphism Through Inheritance
+Polymorphism is often used with inheritance.
+A parent class defines a common method, and child classes modify it according to their own behavior.
+Example
+class Shape:    def area(self):        print("Calculating area")class Rectangle(Shape):    def area(self):        print("Area of rectangle")class Circle(Shape):    def area(self):        print("Area of circle")
+
+
+Each class has its own version of area().
+12. Advantages of Polymorphism
+Polymorphism provides many benefits:
+1. Code Reusability
+The same function name can be used in different situations.
+2. Flexibility
+Programs can handle different data types and objects easily.
+3. Cleaner Code
+You do not need many separate function names for similar behavior.
+4. Easy Expansion
+New classes can be added without changing existing code much.
+5. Real-World Modeling
+It matches real-life behavior more naturally.
+13. Polymorphism vs Inheritance
+These two concepts are related but different.
+Inheritance
+- one class gets features from another class
+Polymorphism
+- the same method or operator behaves differently in different situations
+Example:
+A Dog and a Cat may both inherit from Animal, but each can define its own sound() method.
+Inheritance gives the relationship. Polymorphism gives the different behavior.
+14. Polymorphism in Built-in Operations
+Python uses polymorphism in many built-in operations.
+Example: +
+print(5 + 10)print("Hello" + " World")print([1, 2] + [3, 4])
+
+
+Output
+15
+Hello World
+[1, 2, 3, 4]
+
+Example: *
+print(3 * 4)print("Hi " * 3)
+
+
+Output
+12
+Hi Hi Hi
+
+The same operator can behave differently because of polymorphism.
+15. Example of a Complete Polymorphism Program
+class Dog:    def sound(self):        print("Dog barks")class Cat:    def sound(self):        print("Cat meows")class Cow:    def sound(self):        print("Cow moos")def animal_sound(animal):    animal.sound()d = Dog()c = Cat()cow = Cow()animal_sound(d)animal_sound(c)animal_sound(cow)
+
+
+Output
+Dog barks
+Cat meows
+Cow moos
+
+Explanation
+The function animal_sound() works with different objects.
+Each object uses its own sound() method.
+16. Method Overriding with super()
+Sometimes a child class wants to use the parent method and add extra behavior.
+Example
+class Parent:    def show(self):        print("Parent class")class Child(Parent):    def show(self):        super().show()        print("Child class")obj = Child()obj.show()
+
+
+Output
+Parent class
+Child class
+
+This is also a form of polymorphic behavior because the child method changes how the parent method works.
+17. Common Beginner Mistakes
+Mistake 1: Thinking polymorphism only means inheritance
+Polymorphism is broader than inheritance. It also includes operator overloading, duck typing, and function behavior.
+Mistake 2: Confusing overriding with overloading
+- Overriding: child class changes parent method
+- Overloading: same function name with different parameters in some languages
+  Python handles this differently and usually uses default arguments or *args
+Mistake 3: Not giving methods the same name
+For polymorphism to work in method overriding, the method names must be the same.
+
+
+Abstraction in Python Programming
+Abstraction is one of the most important concepts in Object-Oriented Programming (OOP). It means hiding unnecessary details and showing only the essential features to the user.
+In simple words:
+Abstraction lets you use something without needing to know how it works internally.
+
+For example, when you use a mobile phone, you know how to make a call, send a message, or open an app. But you do not need to know the internal circuit design or processor logic. That hidden complexity is abstraction.
+1. What is Abstraction?
+Abstraction is the process of:
+- hiding internal implementation details
+- showing only important features
+- reducing complexity
+- making code easier to use
+It helps us focus on what an object does, rather than how it does it.
+2. Why Do We Use Abstraction?
+Abstraction is useful because it:
+- hides complexity
+- makes programs easier to understand
+- improves code security
+- reduces confusion
+- makes code easier to maintain
+- helps build large applications cleanly
+It is especially useful in:
+- banking systems
+- payment systems
+- car controls
+- software libraries
+- APIs
+3. Real-Life Example of Abstraction
+Think about a car.
+When you drive a car, you use:
+- steering wheel
+- brake
+- accelerator
+- gear
+You do not need to know:
+- how the engine works internally
+- how fuel is converted into motion
+- how the electrical system is connected
+You only use the important controls.
+That is abstraction.
+4. Abstraction in Python
+In Python, abstraction is commonly implemented using abstract classes and abstract methods.
+Python provides the abc module for this purpose.
+abc means Abstract Base Class.
+5. Abstract Class
+An abstract class is a class that cannot be directly instantiated.
+It is used as a base class for other classes.
+It usually contains one or more abstract methods.
+A child class must implement those methods.
+6. Abstract Method
+An abstract method is a method that is declared in an abstract class but does not have a complete implementation.
+The child class must provide the actual implementation.
+7. Why Use Abstract Classes?
+Abstract classes are used to:
+- define a common structure for child classes
+- force child classes to implement certain methods
+- ensure consistency in design
+- support abstraction in OOP
+8. Syntax of Abstract Class in Python
+from abc import ABC, abstractmethodclass ClassName(ABC):    @abstractmethod    def method_name(self):        pass
+
+
+Explanation
+- ABC is the base class for abstract classes
+- @abstractmethod is a decorator used to define abstract methods
+- pass means the method has no implementation yet
+9. Simple Example of Abstraction
+from abc import ABC, abstractmethodclass Animal(ABC):    @abstractmethod    def sound(self):        pass
+
+
+Here:
+- Animal is an abstract class
+- sound() is an abstract method
+You cannot create an object directly from Animal.
+10. Implementing Abstract Class in Child Class
+from abc import ABC, abstractmethodclass Animal(ABC):    @abstractmethod    def sound(self):        passclass Dog(Animal):    def sound(self):        print("Dog barks")d = Dog()d.sound()
+
+
+Output
+Dog barks
+
+
+Explanation
+- Animal defines the abstract method sound()
+- Dog provides the actual implementation
+- So Dog can be instantiated
+11. Why Can’t We Create Object of Abstract Class?
+Abstract classes are incomplete.
+They are meant to be inherited, not directly used.
+Example:
+from abc import ABC, abstractmethodclass Animal(ABC):    @abstractmethod    def sound(self):        passa = Animal()
+
+
+This gives an error because Animal has an abstract method that is not implemented.
+12. Real-Life Example: Shape
+Suppose we have a Shape class.
+Every shape should have an area() method, but the actual formula is different for each shape.
+- Circle area formula is different
+- Rectangle area formula is different
+- Triangle area formula is different
+So we can use abstraction.
+Example
+from abc import ABC, abstractmethodclass Shape(ABC):    @abstractmethod    def area(self):        passclass Rectangle(Shape):    def __init__(self, length, breadth):        self.length = length        self.breadth = breadth    def area(self):        return self.length * self.breadthr = Rectangle(10, 5)print(r.area())
+
+
+Output
+50
+
+
+13. Another Example: Bank System
+from abc import ABC, abstractmethodclass Bank(ABC):    @abstractmethod    def interest_rate(self):        passclass NepalBank(Bank):    def interest_rate(self):        return 8.5class GlobalBank(Bank):    def interest_rate(self):        return 7.2n = NepalBank()g = GlobalBank()print(n.interest_rate())print(g.interest_rate())
+
+
+Output
+8.57.2
+
+
+Explanation
+- Bank defines the common structure
+- Each child class gives its own implementation
+14. Abstraction vs Encapsulation
+These two concepts are related but not the same.
+Abstraction
+- hides internal details
+- shows only essential features
+Encapsulation
+- bundles data and methods together
+- protects data from direct access
+Simple difference
+- Abstraction = hide complexity
+- Encapsulation = hide data
+15. Example to Understand Difference
+Car Example
+- Abstraction: You know how to drive the car without knowing engine details
+- Encapsulation: The car’s internal parts are hidden inside the body
+16. Benefits of Abstraction
+Abstraction provides many advantages:
+1. Simplicity
+Users only see what they need to see.
+2. Security
+Internal details are hidden.
+3. Maintainability
+You can change internal implementation without affecting the outside code.
+4. Reusability
+Abstract structures can be reused in multiple child classes.
+5. Better Design
+Programs become cleaner and more organized.
+17. Abstraction in Everyday Programming
+Abstraction is used in many places:
+- login systems
+- payment gateways
+- file handling
+- APIs
+- GUI buttons
+- database connections
+For example, when you click a Save button:
+- you do not know all the internal steps
+- you just know the file is saved
+That is abstraction.
+18. Abstract Methods with Multiple Child Classes
+from abc import ABC, abstractmethodclass Employee(ABC):    @abstractmethod    def salary(self):        passclass Teacher(Employee):    def salary(self):        return 50000class Developer(Employee):    def salary(self):        return 70000t = Teacher()d = Developer()print(t.salary())print(d.salary())
+
+
+Output
+5000070000
+
+
+19. Common Beginner Mistakes
+Mistake 1: Trying to create object of abstract class
+obj = Animal()
+
+
+This is not allowed if the class has abstract methods.
+Mistake 2: Not importing ABC and abstractmethod
+You must write:
+from abc import ABC, abstractmethod
+
+
+Mistake 3: Forgetting to implement abstract methods in child class
+If the child class does not implement all abstract methods, it also becomes abstract.
